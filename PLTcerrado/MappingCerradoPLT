@@ -1,0 +1,206 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var table = ee.FeatureCollection("users/q5wu/Cerrado-Habitat-Data"),
+    geometry = /* color: #002366 */ee.Geometry.Polygon(
+        [[[-56.2996988677368, -23.788392885124527],
+          [-56.29978220878966, -23.78837470240273],
+          [-56.29979043570031, -23.788386009453767],
+          [-56.29978380725578, -23.788396580833673],
+          [-56.29897046504967, -23.791896788534874],
+          [-56.2989939636715, -23.791872644617705],
+          [-56.29724265741155, -23.797980281522584],
+          [-56.29492005987058, -23.80644511784008],
+          [-56.290279830688476, -23.806468015365486],
+          [-56.28743585842832, -23.80653037865413],
+          [-56.287252761901854, -23.794067267608078],
+          [-56.287274345832735, -23.7928475155589],
+          [-56.28729591448627, -23.79154921625712],
+          [-56.28729610373734, -23.78852062071382],
+          [-56.29502100264035, -23.788437158745733],
+          [-56.29979542726134, -23.788383067794985],
+          [-56.29977396915808, -23.788392884661803],
+          [-56.299741782136955, -23.788383067608137]]]),
+    globcover = ee.Image("ESA/GLOBCOVER_L4_200901_200912_V2_3"),
+    geometryPit1B = /* color: #0b4a8b */ee.Feature(
+        ee.Geometry.Point([-56.290889, -23.804194]),
+        {
+          "Feature Index": "0",
+          "id": "1",
+          "Pit1B": "Grass",
+          "system:index": "0"
+        }),
+    geometryPit1C = /* color: #77d6c7 */ee.Feature(
+        ee.Geometry.Point([-56.290861, -23.805583]),
+        {
+          "system:index": "0",
+          "id": "2",
+          "name": "Pit1C"
+        }),
+    geometryPit2B = /* color: #98ff00 */ee.Feature(
+        ee.Geometry.Point([-56.295444, -23.797722]),
+        {
+          "system:index": "0",
+          "id": "3",
+          "name": "Pit2B"
+        }),
+    geometryPit2C = /* color: #72858b */ee.Feature(
+        ee.Geometry.Point([-56.296861, -23.796528]),
+        {
+          "name": "Pit2C",
+          "system:index": "0"
+        }),
+    geometry2 = /* color: #00ff00 */ee.Feature(
+        ee.Geometry.Point([-56.290639, -23.795556]),
+        {
+          "name": "Pit3B",
+          "system:index": "0"
+        }),
+    geometry3 = /* color: #0000ff */ee.Feature(
+        ee.Geometry.Point([-56.291167, -23.798167]),
+        {
+          "name": "Pit3C",
+          "system:index": "0"
+        }),
+    geometry4 = /* color: #999900 */ee.Feature(
+        ee.Geometry.Point([-56.290417, -23.803417]),
+        {
+          "name": "Pit4B",
+          "system:index": "0"
+        }),
+    geometry5 = /* color: #009999 */ee.Feature(
+        ee.Geometry.Point([-56.290194, -23.805556]),
+        {
+          "name": "Pit4C",
+          "system:index": "0"
+        }),
+    geometry6 = /* color: #ff00ff */ee.Feature(
+        ee.Geometry.Point([-56.290694, -23.793278]),
+        {
+          "name": "Pit5C",
+          "system:index": "0"
+        }),
+    geometry7 = /* color: #ff9999 */ee.Feature(
+        ee.Geometry.Point([-56.290528, -23.792139]),
+        {
+          "name": "Pit5B",
+          "system:index": "0"
+        }),
+    geometry8 = /* color: #99ff99 */ee.Feature(
+        ee.Geometry.Point([-56.289167, -23.793944]),
+        {
+          "name": "Pit6B",
+          "system:index": "0"
+        }),
+    geometry9 = /* color: #9999ff */ee.Feature(
+        ee.Geometry.Point([-56.289556, -23.792139]),
+        {
+          "name": "Pit6C",
+          "system:index": "0"
+        }),
+    geometry10 = /* color: #ffff99 */ee.Feature(
+        ee.Geometry.Point([-56.2905, -23.804194]),
+        {
+          "name": "Sher1B",
+          "system:index": "0"
+        }),
+    geometry11 = /* color: #99ffff */ee.Feature(
+        ee.Geometry.Point([-56.290194, -23.805722]),
+        {
+          "name": "Sher1C",
+          "system:index": "0"
+        }),
+    geometry12 = /* color: #ff99ff */ee.Feature(
+        ee.Geometry.Point([-56.298111, -23.789139]),
+        {
+          "name": "Sher2B",
+          "system:index": "0"
+        }),
+    geometry13 = /* color: #d63000 */ee.Feature(
+        ee.Geometry.Point([-56.288583, -23.796194]),
+        {
+          "name": "Sher3B",
+          "system:index": "0"
+        }),
+    geometry14 = /* color: #98ff00 */ee.Feature(
+        ee.Geometry.Point([-56.297417, -23.79125]),
+        {
+          "name": "Sher2C",
+          "system:index": "0"
+        }),
+    geometry15 = /* color: #0b4a8b */ee.Feature(
+        ee.Geometry.Point([-56.287639, -23.794028]),
+        {
+          "name": "Sher3C",
+          "system:index": "0"
+        }),
+    geometry16 = /* color: #ffc82d */ee.Feature(
+        ee.Geometry.Point([-56.290722, -23.80075]),
+        {
+          "name": "Sher4B",
+          "system:index": "0"
+        }),
+    geometry17 = /* color: #00ffff */ee.Feature(
+        ee.Geometry.Point([-56.29075, -23.803111]),
+        {
+          "name": "Sher4C",
+          "system:index": "0"
+        });
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+
+
+var polygon = geometry;
+// Extract the landcover band
+var landcover = globcover.select('landcover');
+// Clip the image to the polygon geometry
+var landcover_roi = landcover.clip(geometry);
+// Add a map layer of the landcover clipped to the polygon.
+Map.addLayer(landcover_roi);
+// Print out the frequency of landcover occurrence for the polygon.
+var frequency = landcover.reduceRegion({
+  reducer:ee.Reducer.frequencyHistogram(),
+  geometry:geometry,
+  scale:1000
+});
+print('landcover frequency', frequency.get('landcover'));
+
+Map.addLayer(table, {color: 'aqua'}, 'table');
+
+
+var geometryPit1B = ee.FeatureCollection(
+        [geometryPit1B]);
+        
+var geometryPit1C = ee.FeatureCollection(
+        [geometryPit1C]);
+        
+var geometryPit2B = ee.FeatureCollection(
+        [geometryPit2B]);
+
+var geometryPit2C = ee.FeatureCollection(
+        [geometryPit2C]);
+
+var features = [
+  geometry2,
+  geometry3,
+  geometry4,
+  geometry5,
+  geometry7,
+  geometry6,
+  geometry8,
+  geometry9,
+  geometry10,
+  geometry11,
+  geometry12,
+  geometry14,
+  geometry13,
+  geometry15,
+  geometry16,
+  geometry17
+];
+
+// Create a FeatureCollection from the list and print it.
+var fromList = ee.FeatureCollection(features);
+print(fromList);
+
+
+
